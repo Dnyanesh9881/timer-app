@@ -21,10 +21,10 @@ h2{
 #delete{
     background-color:#F0F757 ;
     color: #34344A;
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
-    padding: 6px 30px;
-    font-weight: 600;
+    padding: 8px 25px;
+    font-weight: 500;
     margin-left: 1rem;
 }
 #mainCotainer{
@@ -65,9 +65,9 @@ input{
 #set{
     background-color:#F0F757 ;
     color: #34344A;
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
-    padding: 6px 30px;
+    padding: 8px 25px;
     font-weight: 600;
     margin-left: 1rem;
 }
@@ -76,7 +76,7 @@ input{
     color: white;
     padding: 10px 30px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-top: 1rem;
 }
 .liveTime{
