@@ -29,7 +29,7 @@ startTimer.addEventListener("click", () => {
   let timer = document.createElement("div");
   var timeInSeconds = hours * 60 * 60 + minutes * 60 + seconds;
   timer.classList = " currentTime";
-  timer.innerHTML = `<span style="margin-right: 1rem;"> Time Left: </span>`;
+  timer.innerHTML = `<span class="timeHeading" style="margin-right: 1rem;"> Time Left: </span>`;
 
   let liveTime = document.createElement("span");
   liveTime.classList = "liveTime";
@@ -38,9 +38,9 @@ startTimer.addEventListener("click", () => {
   const del = document.createElement("button");
   del.innerText = "delete";
   del.setAttribute("id", "delete");
-  del.addEventListener("click", ()=>{
+  del.addEventListener("click", () => {
     timer.remove();
-  })
+  });
   timer.appendChild(del);
 
   timeContainer.appendChild(timer);
@@ -51,7 +51,6 @@ startTimer.addEventListener("click", () => {
     var displaySeconds = remainder - displayMinutes * 60;
 
     liveTime.innerHTML =
-     
       ("0" + displayHours).substr(-2) +
       ":" +
       ("0" + displayMinutes).substr(-2) +
@@ -62,9 +61,17 @@ startTimer.addEventListener("click", () => {
     displayTime();
     timeInSeconds -= 1;
     if (timeInSeconds < 0) {
-        timer.classList.add("hide")
-        del.innerText="stop";
-
+      del.innerText = "stop";
+      document.querySelector(".timeHeading").classList.add("hide");
+      liveTime.classList.add("hide");
+      let text=document.createElement("span");
+      text.innerText="Time Is Up !";
+      timer.insertBefore(text, del);
+      text.style.color="#34344A";
+      text.style.fontSize="25px"
+      timer.style.backgroundColor = "#F0F757";
+      del.style.backgroundColor = "#34344A";
+      del.style.color = "#ffffff";
       clearInterval(interval);
     }
   }, 1000);
